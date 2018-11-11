@@ -1,11 +1,11 @@
 public class OysterCard {
 
     private int value;
-    private int maximumValue;
+
+    public static final int MAXIMUM_VALUE = 90;
 
     public OysterCard(){
         value = 0;
-        maximumValue = 90;
     }
 
     public int getValue() {
@@ -17,8 +17,8 @@ public class OysterCard {
     }
 
     public void topUp(int amount){
-        if (this.value + amount > 90) {
-            throw new java.lang.Error("Exceeds maximum topup value of 90");
+        if (this.value + amount > MAXIMUM_VALUE) {
+            throw new IllegalArgumentException("Exceeds maximum topup value of 90");
         }
         else {
             this.value += amount;

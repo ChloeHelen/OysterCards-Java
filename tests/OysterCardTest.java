@@ -1,6 +1,4 @@
-import org.junit.Assert;
 import org.junit.Test;
-import static org.testng.Assert.fail;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class OysterCardTest {
@@ -18,9 +16,9 @@ public class OysterCardTest {
         assertEquals(30, oysterCard.getValue());
     }
 
-    @Test (expected = Error.class)
-    public void maximumValueTest() throws java.lang.Error {
-            OysterCard oysterCard = new OysterCard();
-            oysterCard.topUp(92);
+    @Test (expected = IllegalArgumentException.class)
+    public void maximumValueTest() {
+        OysterCard oysterCard = new OysterCard();
+        oysterCard.topUp(OysterCard.MAXIMUM_VALUE + 2);
     }
 }
