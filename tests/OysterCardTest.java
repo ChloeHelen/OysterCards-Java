@@ -21,4 +21,13 @@ public class OysterCardTest {
         OysterCard oysterCard = new OysterCard();
         oysterCard.topUp(OysterCard.MAXIMUM_VALUE + 2);
     }
+
+    @Test
+    public void deductTest() {
+        OysterCard oysterCard = new OysterCard();
+        oysterCard.topUp(20);
+        oysterCard.deduct(10);
+        assertEquals(10, oysterCard.getValue());
+    }
 }
+

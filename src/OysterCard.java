@@ -24,4 +24,8 @@ public class OysterCard {
             this.value += amount;
         }
     }
+
+    public void deduct(int amount){
+        this.value -= amount;
+    }
 }
