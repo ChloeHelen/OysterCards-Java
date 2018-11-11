@@ -11,6 +11,10 @@ public class OysterCard {
     }
 
     public void setValue(int value) {
-        this.value = value;
+        this.value = this.value + value;
+    }
+
+    public void topUp(int amount){
+        setValue(amount);
     }
 }
