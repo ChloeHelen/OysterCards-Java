@@ -29,5 +29,22 @@ public class OysterCardTest {
         oysterCard.deduct(10);
         assertEquals(10, oysterCard.getValue());
     }
+
+    @Test
+    public void inJourneyTrueTest() {
+        OysterCard oysterCard = new OysterCard();
+        oysterCard.touchIn();
+        assertEquals(true, oysterCard.isInJourney());
+    }
+
+    @Test
+    public void inJourneyFalseTest() {
+        OysterCard oysterCard = new OysterCard();
+        oysterCard.touchIn();
+        oysterCard.touchOut();
+        assertEquals(false, oysterCard.isInJourney());
+    }
+
+
 }
 

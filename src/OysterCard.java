@@ -1,19 +1,21 @@
 public class OysterCard {
 
     private int value;
+    private boolean inJourney;
 
     public static final int MAXIMUM_VALUE = 90;
 
     public OysterCard(){
         value = 0;
+        inJourney = false;
     }
 
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public boolean isInJourney() {
+        return inJourney;
     }
 
     public void topUp(int amount){
@@ -27,5 +29,13 @@ public class OysterCard {
 
     public void deduct(int amount){
         this.value -= amount;
+    }
+
+    public void touchIn() {
+        this.inJourney = true;
+    }
+
+    public void touchOut() {
+        this.inJourney = false;
     }
 }
